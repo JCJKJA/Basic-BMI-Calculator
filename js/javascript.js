@@ -63,6 +63,7 @@ function BMI_reset(){ // Resets the BMI calculator and remove some calculation r
     var textBMIResultDesc = document.getElementById("text-resultDesc")
     document.getElementById("calc-emptyWarnText").innerHTML=""
     textBMIResultDesc.innerHTML=""
+    document.getElementById("text-resultKelamin").innerHTML=""
 } //a
 
 function BMI_resultDesc(BMIscore){
