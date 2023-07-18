@@ -1,0 +1,21 @@
+.div-main-left{
+    width: 45%;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+}
+.div-calculator{
+    background-color: #e3e3e3;
+}
+.div-main-right{
+    width: 45%;
+    margin-left:auto;
+    display: flex;
+    flex-direction: column;
+}
+.div-main-all{
+    display: flex;
+}
+body {
+    background-color: #ecffbd;
+}
