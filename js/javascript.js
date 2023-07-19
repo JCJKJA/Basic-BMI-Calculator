@@ -9,17 +9,17 @@ Easier on the eyes.
 
 /*/
 function isEmpty(IsEmptyTarget){ /*/ This function checks if the function parameter(IsEmptyTarget) is empty. /*/
-    if (IsEmptyTarget.value == null || IsEmptyTarget.value == ""){
+    if (IsEmptyTarget.value == null || IsEmptyTarget.value == ""){ //Checks if the target is empty
         console.log(IsEmptyTarget, "Empty") //--Debug
-        return false;
+        return false; //Returns the bool value of False
     }else{
         console.log(IsEmptyTarget, "Filled") //--Debug
-        return true;
+        return true; //Returns the bool value of True
     }
 }
 
 function BMI_calculation(){ // Calculation function. When ran, it will calculate the inputs if there any.
-    var calcForm = document.forms["form-calculatorInputs"]
+    var calcForm = document.forms["form-calculatorInputs"] // Variables to make code more organized
     var textBMIResultNum = document.getElementById("text-resultNumber")
     var textBMIResult_Kelamin = document.getElementById("text-resultKelamin")
     if ( /*/ This checks whether the inputs are empty or not. It works by calling the function "IsEmpty(target)" /*/
@@ -32,7 +32,7 @@ function BMI_calculation(){ // Calculation function. When ran, it will calculate
         console.log("Form Filled") //--Debug
         console.log("Caluclation started.") //--Debug
 
-        // Variables are being defined here. When adding new variables, add them here so it looks nice.
+        // Result Variables, takes the value of the elements.
         var kelamin = calcForm.elements["inputRadio-kelamin"].value
         var beratBadan = calcForm.elements["inputNumber-beratBadan"].value
         var usiaTahun = calcForm.elements["inputNumber-usiaTahun"].value
@@ -44,12 +44,13 @@ function BMI_calculation(){ // Calculation function. When ran, it will calculate
         console.log(tingiBadan) //--Debug
         console.log("BMI result: ", calcResultNum) //--Debug
 
+        // BMI calculator formula.
         calcResultNum = ((parseInt(beratBadan)) / (parseInt(tingiBadan) * parseInt(tingiBadan) / 10000)).toFixed(1)
-        textBMIResultNum.innerHTML = calcResultNum
-        document.getElementById("calc-emptyWarnText").innerHTML=""
-        textBMIResult_Kelamin.innerHTML = BMI_resultKelamin(calcResultKelamin)
+        textBMIResultNum.innerHTML = calcResultNum //Changes the text, adding the calculation result number.
+        document.getElementById("calc-emptyWarnText").innerHTML="" //Sets the emptyWarnText to empty in case it's filled
+        textBMIResult_Kelamin.innerHTML = BMI_resultKelamin(calcResultKelamin) //Add the Kelamin value under the result
 
-        BMI_resultDesc(calcResultNum)
+        BMI_resultDesc(calcResultNum) //Calls the BMI_resultDesc function which does the work to add the description.
 
     }else{ // vvv Else. If the code doesn't detect that the form is filled.
         console.log("Empty") //--Debug
@@ -66,9 +67,9 @@ function BMI_reset(){ // Resets the BMI calculator and remove some calculation r
     document.getElementById("text-resultKelamin").innerHTML=""
 } //a
 
-function BMI_resultDesc(BMIscore){
+function BMI_resultDesc(BMIscore){ // This sets the result description according to the score
     if (BMIscore < 18.5){ // Kekurangan
-        var textBMIResultNum = document.getElementById("text-resultNumber")
+        var textBMIResultNum = document.getElementById("text-resultNumber") //These changes the text
         var textBMIResultDesc = document.getElementById("text-resultDesc")
        //console.log(BMIscore) //--Debug
         textBMIResultDesc.innerHTML = "Anda kekurangan berat badan."
@@ -89,15 +90,15 @@ function BMI_resultDesc(BMIscore){
         textBMIResultDesc.innerHTML = "Anda kegemukan (obesitas)."
     }
 }
-function BMI_resultKelamin(inputRadioKel_Chosen){
-    if (inputRadioKel_Chosen.includes("pria")){
+function BMI_resultKelamin(inputRadioKel_Chosen){ // This gets the inputRadioKelamin value and adds the text
+    if (inputRadioKel_Chosen.includes("pria")){ //If it detects the letters "pria" in the radio value
         return "Kelamin: Laki-Laki"
-    } else if (inputRadioKel_Chosen.includes("wanita")){
+    } else if (inputRadioKel_Chosen.includes("wanita")){ // If it detects the letters "wanita" in the radio value
         return "Kelamin: Wanita"
     }
 }
 
-function img_toggle(targetimg){
+function img_toggle(targetimg){ // Unused
     console.log("Button Pressed") //--Debug
     var targetimg_target = document.getElementById(targetimg)
     if (targetimg_target.style.display == "hidden"){
