@@ -21,7 +21,7 @@
                             <input type="radio" name="inputRadio-kelamin" value="inputRadio-wanita">Wanita</input>
                          </div>
                          <br>
-                        <h3>Berat Badan (kg)</h3> <!-- Number input, [put explaination here for how the .js do the calculation or something] -->
+                        <h3>Berat Badan (kg)</h3> <!-- Number input, the calculation function in the javascript.js file will take the values and calculate them. -->
                         <input type="number" name="inputNumber-beratBadan" id="inputNumber-beratBadan" value="Berat Badan (kg)"/>
                         <br><br>
                         <h3>Usia (tahun)</h3>
@@ -30,8 +30,8 @@
                         <h3>Tingi badan (cm)</h3>
                         <input type="number" name="inputNumber-tingiBadan" id="inputNumber-tingiBadan" value="Tingi badan (cm)"/>
                         <br><br>
-                        <input onclick="BMI_calculation()" id="btn-calculateBMI" name="btn-calculateBMI" type="button" value="Hitung BMI"/>
-                        <input name="btn-calcReset" type="reset" value="Reset" onclick="BMI_reset()"/>
+                        <input onclick="BMI_calculation()" id="btn-calculateBMI" name="btn-calculateBMI" type="button" value="Hitung BMI"/> <!-- This calls the calculate function which makes the result appear -->
+                        <input name="btn-calcReset" type="reset" value="Reset" onclick="BMI_reset()"/> <!-- This calls the reset function which resets the form and removes the result texts. -->
                     </form> <!-- If the form's formatting looks a bit odd it was because I was unfamiliar with making forms. -->
                     <sup id="calc-emptyWarnText"></sup>
                 </div>
@@ -49,6 +49,7 @@
     </body>
 
 </html> <!-- Code could've probably looked a little more cleaner but atleast it's still readable and it works. -->
+        <!-- Next time, it should look more cleaner since I understand now. -->
 
 
 <!-- << Development Log >>
@@ -68,6 +69,10 @@
 
     [18/07/2023 23:31] Welp. I think that's all. The BMI calculator is functional. I think all the goal
         and conditions are completed. This was fun. Anyways, last push to repository. See ya!
+
+    [19/07/2023 20:05] Added some more comments to explain how the code works.
+
+    [19/07/2023 20:09] Alright. That should be all of it. Actual last push to repo. See Ya!
 
 -->
 
